@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    min-height: 100vh;
+}
+
+/* =========================
+   FORM / INVENTORY
+   ========================= */
+
+.form-container {
+    background: #fff;
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
+
+.form-container h2 {
+    color: #17324d;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.adding-inventory {
+    margin-bottom: 20px;
+}
+
+.adding-inventory label {
+    display: block;
+    margin-bottom: 8px;
+    color: #17324d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.adding-inventory input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d5d9de;
+    border-radius: 6px;
+    background: #fff;
+    color: #333;
+    font-size: 15px;
+    outline: none;
+    transition: .3s;
+}
+
+.adding-inventory input[readonly] {
+    background: #f4f6f9;
+    color: #555;
+    cursor: not-allowed;
+}
+
+.adding-inventory input[name="added_stock"] {
+    background: #fff;
+    cursor: text;
+}
+
+.adding-inventory input:focus {
+    border-color: #5563c1;
+    box-shadow: 0 0 0 3px rgba(85, 99, 193, .12);
+}
+
+.adding-inventory input::placeholder {
+    color: #999;
+}
+
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.button {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.save-btn,
+.cancel-btn {
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.save-btn {
+    background: #17324d;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.save-btn:hover {
+    background: #5563c1;
+    transform: translateY(-2px);
+}
+
+.cancel-btn {
+    background: #e9ecef;
+    color: #333;
+    text-decoration: none;
+}
+
+.cancel-btn:hover {
+    background: #d6d9dc;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   INVENTORY HISTORY
+   ========================= */
+
+.history-container {
+    background: #fff;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+}
+
+.history-container h2 {
+    color: #17324d;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.history-container h3 {
+    color: #17324d;
+    font-size: 15px;
+    font-weight: 600;
+    background: #f4f6f9;
+    border: 1px solid #d5d9de;
+    padding: 13px 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   HISTORY TABLE
+   ========================= */
+
+.history-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+.history-container table th {
+    background: #17324d;
+    color: #fff;
+    padding: 13px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.history-container table td {
+    padding: 13px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+}
+
+.history-container table tbody tr:hover {
+    background: #f4f6f9;
+}
+
+.history-container table td strong {
+    color: #17324d;
+    font-size: 15px;
+}
+
+
+/* =========================
+   BACK BUTTON
+   ========================= */
+
+.history-container > a {
+    display: inline-block;
+    margin-top: 20px;
+    background: #17324d;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: .3s;
+}
+
+.history-container > a:hover {
+    background: #5563c1;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   TABLET RESPONSIVE
+   ========================= */
+
+@media (max-width: 800px) {
+
+    .form-container,
+    .history-container {
+        width: 94%;
+        margin: 20px auto;
+        padding: 25px;
+    }
+
+    /* Allow history table to scroll horizontally */
+    .history-container {
+        overflow-x: auto;
+    }
+
+    .history-container table {
+        min-width: 750px;
+    }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .form-container,
+    .history-container {
+        width: 94%;
+        margin: 15px auto;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .form-container h2,
+    .history-container h2 {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+    .history-container h3 {
+        font-size: 14px;
+        padding: 11px 12px;
+    }
+
+    /* Form inputs */
+    .adding-inventory input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Stack buttons */
+    .button {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .save-btn,
+    .cancel-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+
+    /* Smaller table text */
+    .history-container table th,
+    .history-container table td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    /* Back button */
+    .history-container > a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+    }
+}
+
+
+/* =========================
+   VERY SMALL PHONES
+   ========================= */
+
+@media (max-width: 400px) {
+
+    .form-container,
+    .history-container {
+        width: 96%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .form-container h2,
+    .history-container h2 {
+        font-size: 21px;
+    }
+
+    .adding-inventory label {
+        font-size: 13px;
+    }
+
+    .adding-inventory input {
+        font-size: 13px;
+        padding: 11px;
+    }
+
+    .save-btn,
+    .cancel-btn {
+        font-size: 14px;
+    }
+}
